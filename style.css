@@ -39,7 +39,7 @@ img {
 }
 
 .topo p {
-  font-size: clamp(1rem, 2vw);
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 /* MENU */
@@ -67,7 +67,8 @@ img {
 
 /* HERO */
 .hero {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
   margin-bottom: 3rem;
@@ -75,10 +76,6 @@ img {
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.658);
-}
-
-.hero-texto, .hero-imagem {
-  flex: 1;
 }
 
 .hero h2 {
@@ -199,7 +196,7 @@ th {
 /* Tablets */
 @media (max-width: 1023px) {
   .hero {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .grid-galeria {
@@ -207,33 +204,10 @@ th {
   }
 }
 
-/* Celulares */
-@media (max-width: 767px) {
-  .menu {
-    flex-direction: column;
-  }
-
-  .hero {
-    padding: 1.2rem;
-  }
-
-  .hero h2 {
-    font-size: 1.5rem;
-  }
-
-  .cards, .grid-galeria {
-    grid-template-columns: 1fr;
-  }
-
-  .box {
-    padding: 2rem;
-    font-size: 1.5rem;
-  }
-}
-
 /* Breakpoint Extra*/
 @media(max-width: 768px){
   .hero {
+    grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1.5rem;
   }
@@ -248,5 +222,30 @@ th {
 
   .topo h1 {
     font-size: 1.8rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 767px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 1.2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .cards, .grid-galeria {
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    padding: 2rem;
+    font-size: 1.5rem;
   }
 }
